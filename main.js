@@ -252,7 +252,6 @@ function moveChar(key) {
         case 37:
         verticalOrHorizontal = false;
         positive = false;
-        console.log("left");
         topLeft = maincharacter_Left_topleft;
         topRight = maincharacter_Left_topright;
         botLeftStand = maincharacter_Horizontal_standleft;
@@ -264,7 +263,6 @@ function moveChar(key) {
 
             break;
         case 38:
-        console.log("up");
         verticalOrHorizontal = true;
         positive = false;
         topLeft = maincharacter_Back_topleft;
@@ -277,7 +275,6 @@ function moveChar(key) {
         newY = -2;
         break;
         case 39:
-        console.log("right");
         verticalOrHorizontal = false;
         positive = true;
         topLeft = maincharacter_Right_topleft;
@@ -290,7 +287,6 @@ function moveChar(key) {
         newY = 0;
             break;
         case 40:
-        console.log("down");
 
         verticalOrHorizontal = true;
         positive = true;
@@ -316,7 +312,6 @@ function moveChar(key) {
     for(let index = 0; index < walls.length; index++){
     if(walls[index].x === mainCharPos.x+newX && walls[index].y === mainCharPos.y+newY){
     canMove = true;
-    console.log("walls");
     return
     }
 }

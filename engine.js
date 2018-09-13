@@ -1,5 +1,3 @@
-console.log('Hi')
-
 var canvas = $("c");
 var ctx = canvas.getContext("2d");
 
@@ -21,17 +19,14 @@ var subspriteLength = 10;
 
 
 var multiplier = Math.floor( window.innerWidth < window.innerHeight ? window.innerWidth/(boardwidth*subspriteLength) : window.innerHeight/(boardheight*subspriteLength))
-//var multiplier = 1;
 canvas.width = boardwidth*subspriteLength*multiplier
 canvas.height = boardheight*subspriteLength*multiplier
 var defaultcolor = '#181425'
 
 
 //list of sprites:
-var tile = 'OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSOOOOOSSSSSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO'
 
 var Alphabet = {
-//@@@@@@@@@@@O@@OOOOO@@O@@O@@@@@@O@@O@@@@@@O@@O@@@@@@O@@O@@@@@@O@@O@@@@@@OOOOOOOO@@@@@@@@@@@@@@@@@@@@@
     A: 'O@@OOOOO@@O@@O@@@@@@O@@O@@@@@@O@@O@@@@@@O@@O@@@@@@O@@O@@@@@@OOOOOOOO',
     B: 'O@@OOOOO@@O@@O@@@O@@O@@O@@@O@@O@@O@@@O@@O@@O@@@O@@OOOO@@@O@@@@@OOOOO',
     C: 'OOOOOOOO@@O@@@@@@O@@O@@@@@@O@@O@@@@@@O@@O@@@@@@O@@O@@@@@@O@@O@@@@@@O',
@@ -152,7 +147,6 @@ function addToDrawQueue(sprite, ID, x, y, layer) {
  */
 function removefromDrawQueue(ID) {
     for (let index = drawQueue.length - 1; index >= 0; index--) {
-        //console.log(drawQueue[index])
         if (drawQueue[index].ID === ID) {
             drawQueue.splice(index, 1);
         }
