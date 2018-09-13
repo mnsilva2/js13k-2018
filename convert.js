@@ -38,7 +38,6 @@ for(let i = 0; i < size; i++){
         }else{
             index =colorpalleteArray.indexOf(rgbToHex(pixelData[0],pixelData[1],pixelData[2]))
         }
-        //console.log(index.toString(2))
 let bin = '01'+((multipleVal == true ? 1 : 0) + pad(index.toString(2), 5))
         console.log(bin);
         console.log(parseInt(bin,2))
