@@ -105,12 +105,6 @@ var grayWall = 'OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 var doorRight = 'OYYYYYYYYYOYYYYYYYYYOYYYYYYYYYOOYYYYYYYYOOYYYYYYYYOOOYYYYYYYOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO'
 var doorLeft = 'OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOYYYYYYYOOYYYYYYYYOOYYYYYYYYOYYYYYYYYYOYYYYYYYYYOYYYYYYYYY'
 
-var sideWalk = 'OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMOOOOOOOOOO'
-var roadLeft = 'SSSSSSSSSSFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFSSSSSSSFF'
-var roadRight = 'FSSSSSSSFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFSSSSSSSSSSFFFFFFFFFF'
-
-
-
 
 
 
@@ -219,7 +213,14 @@ function moveSpriteinDrawQueue(ID, verticalOrHorizontal, positive, timeToMove,st
             callback: callback
         })
 }
-
+/**
+ * Writes to the screen a text message, the Text will not overflow to a new line
+ * @param {text} text - The text.
+ * @param {int} ID - The Object ID.
+ * @param {int} StartX - The X postion of where the text will start.
+ * @param {int} StartY - The Y postion of where the text will start.
+ * @param {int} layer - Which layer to draw, the smaller values will be on top.
+ */
 function WriteToScreen(text, ID, StartX, StartY, layer){
     let textArray = text.split("");
     textArray.forEach(function(item, index){
@@ -309,7 +310,6 @@ function updateMovement(index) {
     let newX = Math.round((!animation.verticalOrHorizontal ?  1/animation.steps*positive : 0) * 10)/10
     let newY = Math.round((animation.verticalOrHorizontal ?  1/animation.steps*positive : 0) * 10)/10
     
-    //console.log(drawQueue)
     animation.currentStep++;
      if (animation.currentStep === animation.steps) {
 
@@ -332,7 +332,6 @@ var updateTimeout, now;
 function animate() {
     var delta = -now + (now = Date.now());
     if (isNaN(delta)) { return }
-    //console.log(delta)
     for (let index = 0; index < animationQueue.length; index++) {
         let animation = animationQueue[index];
         if(animation === null){continue}
