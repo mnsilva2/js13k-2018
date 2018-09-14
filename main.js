@@ -196,7 +196,7 @@ addToDrawQueue(doorRight, 10, 17, 5, 5);
 doors.push({x: 16, y: 5});
 doors.push({x: 17, y: 5});
 }
-function StartLvl3(){
+function StartLvl4(){
     addToDrawQueue('#181425', 50, -1, -1, 2);
     WriteToScreen('Congratulations', 97, 2, 9, 1);
 }
